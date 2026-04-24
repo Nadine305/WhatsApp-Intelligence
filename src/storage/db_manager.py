@@ -28,7 +28,7 @@ class DatabaseManager:
                 connection.commit()
                 return result
         except SQLAlchemyError as e:
-            print(f"❌ Database Error: {e}")
+            print(f"Database Error: {e}")
             return None
 
     # --- USER METHODS ---
@@ -56,7 +56,7 @@ class DatabaseManager:
                 result = connection.execute(text(query))
                 return result.fetchall()
         except SQLAlchemyError as e:
-            print(f"❌ Error fetching messages: {e}")
+            print(f"Error fetching messages: {e}")
             return []
 
     def mark_as_processed(self, message_id):
@@ -77,7 +77,7 @@ class DatabaseManager:
                 connection.commit()
                 return result.fetchone()[0]
         except SQLAlchemyError as e:
-            print(f"❌ Error adding interest: {e}")
+            print(f"Error adding interest: {e}")
             return None
 
     def link_user_to_interest(self, user_id, interest_id, confidence):
