@@ -13,7 +13,7 @@ MAX_SAMPLES_PER_CLUSTER = 10
 class ClusterLabeler:
 
     def __init__(self):
-        self.client = Groq(api_key=os.getenv("GEMINI_API_KEY"))
+        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
     def label_cluster(self, cluster_id: int, messages: list[dict]) -> dict:
         samples = messages[:MAX_SAMPLES_PER_CLUSTER]

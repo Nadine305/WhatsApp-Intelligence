@@ -10,7 +10,7 @@ class MessageFilter:
         messages = self._remove_too_short(messages)
         messages = self._remove_noise_only(messages)
         after = len(messages)
-        print(f"🔍 Filter: {before} → {after} kept")
+        print(f" Filter: {before} → {after} kept")
         return messages
 
     def _remove_duplicates(self, messages):
